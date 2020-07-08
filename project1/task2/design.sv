@@ -18,7 +18,7 @@ module p2c1 (a, b, c, d, f, clk);
 
  dff DFF1(clk,j,k);
   
-  always @(k)
+  always @(k or g or h)
   if (k)
     f = g;
   else
@@ -47,7 +47,7 @@ module p2c2 (a, b, c, d, f, clk);
 
  dff DFF2(clk,j,k);
   
-  always @(k)
+  always @(k or g or h)
   if (k)
     f = g;
   else

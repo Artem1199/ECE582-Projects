@@ -1,0 +1,2 @@
+-1 12 72 5 1 77 79 52 3 FMR_VLOG-079/home/artem3/common/Desktop/git/ECE582-Projects/project1/task2/design.sv/p2c2gVariable 'g' referenced inside always block which is not in sensitivity list.
+-1 12 72 5 1 77 79 54 3 FMR_VLOG-079/home/artem3/common/Desktop/git/ECE582-Projects/project1/task2/design.sv/p2c2hVariable 'h' referenced inside always block which is not in sensitivity list.
