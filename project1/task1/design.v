@@ -11,7 +11,7 @@ module p1c1(x1,y1,x2,y2,a);
   assign l = x2 & y2;
   assign m = ~(x2 | y2);
   assign n = j | k;
-  assign o = l | n;
+  assign o = l | m;
   assign a = n & o;
   
 endmodule
