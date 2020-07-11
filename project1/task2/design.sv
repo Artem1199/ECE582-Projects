@@ -1,7 +1,7 @@
 //top circuit
-module p2c1 (a, b, c, d, f, clk);
+module p2c1 (a, b, c, d, f, clk, reset);
   
-  input a, b, c, d;
+  input a, b, c, d, reset;
   input clk;
   
   wire h, g, n, j, k;
@@ -16,9 +16,9 @@ module p2c1 (a, b, c, d, f, clk);
   assign n = ~(c&d);
   assign j = n|f;
 
- dff DFF1(clk,j,k);
+  dff DFF1(clk,j,k,reset);
   
-  always @(k or g or h)
+  always @(g, h, k)
   if (k)
     f = g;
   else
@@ -28,9 +28,9 @@ endmodule
 
 
 //bottom circuit
-module p2c2 (a, b, c, d, f, clk);
+module p2c2 (a, b, c, d, f, clk, reset);
 
-  input a, b, c, d;
+  input a, b, c, d, reset;
   input clk;
   
   wire h, g, n, j, k;
@@ -45,9 +45,9 @@ module p2c2 (a, b, c, d, f, clk);
   assign n = ~(c&d);
   assign j = n^f;
 
- dff DFF2(clk,j,k);
+  dff DFF2(clk,j,k, reset);
   
-  always @(k or g or h)
+  always @(g, h, k)
   if (k)
     f = g;
   else
@@ -58,11 +58,16 @@ endmodule
 
 // Design
 // D flip-flop
-module dff (clk,d,q);
-  input      clk;
-  input      d;
-  output     q;
-  reg        q;
+module dff (clk,d,q,reset);
+  input      clk, d, reset;
+  output reg q;
 
-  always @(posedge clk) q <= d;
+  always @(posedge clk or posedge reset)
+    if (reset) begin
+      q <= 0;
+    end else begin
+      q <= d;
+    end
+  
 endmodule
+
