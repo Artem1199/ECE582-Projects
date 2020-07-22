@@ -11,7 +11,7 @@ module test;
   
 
   
-  p1c1 P1C1(.in(in), .out(out), .d(d), .reset(reset), .e(e), .clk(dclk));
+  p1c2 P1C2(.in(in), .out(out), .d1(d), .d2(d), .reset(reset), .e1(e), .e2(e), .clk(dclk));
             
   initial begin
     $dumpfile("dump.vcd");
