@@ -2,10 +2,10 @@
 module p1c1 (in, out, reset, d, e, clk);
   
   input in, clk, reset;
-  output reg out;
+  output out;
   
   wire a,b,c;
-  output reg d, e;
+  output d, e;
   
   assign a = ~(in & d);
   assign b = in ^ e;
