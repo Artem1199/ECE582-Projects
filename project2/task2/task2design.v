@@ -1,4 +1,4 @@
-//top circuit
+//top circuit 
 module p1c1 (in, out, reset, d, e, clk);
   
   input in, clk, reset;
